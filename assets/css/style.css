@@ -1,0 +1,290 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8ff;
+    color: #1b2a41;
+}
+
+.top-navbar {
+    position: relative;
+    z-index: 1030;
+}
+
+.top-navbar .navbar-brand {
+    margin-right: 1rem;
+    letter-spacing: 0.02em;
+}
+
+.top-navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.55);
+}
+
+.top-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+
+.top-navbar-actions {
+    padding-top: 0.75rem;
+}
+
+.top-navbar-user {
+    display: block;
+    overflow-wrap: anywhere;
+}
+
+.top-navbar-actions .btn {
+    min-width: 5rem;
+}
+
+.auth-body {
+    background: linear-gradient(135deg, #edf5ff 0%, #dfeaff 100%);
+}
+
+.auth-card {
+    width: min(940px, 92vw);
+    border-radius: 18px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.auth-panel-left {
+    background: linear-gradient(180deg, #0d6efd, #0d47a1);
+    color: #fff;
+    padding: 3rem;
+    align-items: center;
+}
+
+.auth-panel-right {
+    padding: 2.2rem;
+}
+
+.sidebar {
+    min-height: calc(100vh - 56px);
+    background: #eaf2ff;
+    border-right: 1px solid #d8e4ff;
+}
+
+.sidebar .nav-link {
+    color: #1a2340;
+    border-radius: 8px;
+    padding: 0.7rem 0.9rem;
+    font-weight: 600;
+}
+
+.sidebar-icon {
+    width: 1rem;
+    height: 1rem;
+    flex: 0 0 1rem;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+    background: #dfeaff;
+    color: #0d6efd;
+}
+
+.main-content {
+    background: #f7f9fd;
+    min-height: calc(100vh - 56px);
+}
+
+.card {
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(13, 110, 253, 0.08);
+}
+
+.stats-grid .card {
+    padding: 1rem;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0d6efd;
+}
+
+.table thead th {
+    background: #eaf2ff;
+    color: #12315c;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.table-actions a {
+    margin-right: 0.5rem;
+}
+
+.form-section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+.demo-credentials {
+    font-size: 0.92rem;
+}
+
+.empty-state {
+    border: 1px dashed #cdd9ef;
+    border-radius: 12px;
+    background: #fff;
+    padding: 2rem;
+    text-align: center;
+    color: #58667d;
+}
+
+.report-period-form {
+    flex-wrap: wrap;
+}
+
+.report-period-form .form-select {
+    min-width: 8rem;
+}
+
+.report-summary-card,
+.report-chart-card {
+    min-width: 0;
+}
+
+.report-summary-card p:last-child {
+    margin-bottom: 0;
+}
+
+.report-chart-area {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    min-width: 0;
+}
+
+.report-chart-area canvas {
+    max-width: 100%;
+}
+
+.maintenance-report {
+    min-width: 0;
+}
+
+.equipment-mobile-item + .equipment-mobile-item {
+    border-top: 1px solid #e3eaf5;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.equipment-mobile-photo {
+    width: 64px;
+    height: 64px;
+    flex: 0 0 64px;
+    object-fit: cover;
+}
+
+.equipment-mobile-photo-empty {
+    display: grid;
+    place-items: center;
+    background: #f7f9fd;
+}
+
+.equipment-mobile-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.equipment-mobile-details dt {
+    color: #58667d;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.equipment-mobile-details dd {
+    margin: 0.15rem 0 0;
+    overflow-wrap: anywhere;
+}
+
+.maintenance-report table {
+    min-width: 760px;
+}
+
+@media (min-width: 992px) {
+    .top-navbar-actions {
+        padding-top: 0;
+    }
+}
+
+@media print {
+    @page {
+        size: landscape;
+        margin: 12mm;
+    }
+
+    body,
+    .main-content {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    .navbar,
+    .sidebar,
+    .report-hide-print,
+    .maintenance-controls {
+        display: none !important;
+    }
+
+    .main-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        padding: 0 !important;
+    }
+
+    .maintenance-report .card {
+        box-shadow: none !important;
+        border: 1px solid #bbb !important;
+    }
+
+    .maintenance-report table {
+        min-width: 0;
+        font-size: 9pt;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid #d8e4ff;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .main-content {
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+    }
+
+    .report-period-form {
+        align-items: stretch !important;
+    }
+
+    .report-period-form .form-select {
+        width: 100% !important;
+    }
+
+    .report-period-form .text-muted {
+        flex-basis: 100%;
+    }
+
+    .report-chart-area {
+        height: 260px;
+    }
+}
