@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TechBorrow Project Presentation</title>
+  <style>
+    :root { color-scheme: light; font-family: Arial, sans-serif; --blue: #1455a3; --ink: #17263b; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #eaf0f8; color: var(--ink); }
+    .slide { display: none; width: min(100vw, 1280px); min-height: min(100vh, 720px); margin: 0 auto; padding: 8vh 9vw; background: white; }
+    .slide.active { display: flex; flex-direction: column; justify-content: center; }
+    h1 { font-size: clamp(2.4rem, 7vw, 5rem); color: var(--blue); margin: 0 0 1rem; }
+    h2 { font-size: clamp(2rem, 5vw, 3.5rem); color: var(--blue); margin: 0 0 2rem; }
+    p, li { font-size: clamp(1.15rem, 2.4vw, 1.8rem); line-height: 1.5; }
+    .subtitle { font-size: clamp(1.4rem, 3vw, 2rem); }
+    .placeholder { border-bottom: 2px solid #71819a; display: inline-block; min-width: 16rem; }
+    footer { position: fixed; bottom: 1rem; left: 0; right: 0; text-align: center; color: #53647b; }
+    @media print { body { background: white; } .slide { display: flex !important; height: 100vh; page-break-after: always; } footer { display: none; } }
+  </style>
+</head>
+<body>
+  <section class="slide active">
+    <h1>TechBorrow</h1>
+    <p class="subtitle">Technical Equipment Borrowing and Inventory System</p>
+    <p>Presenter: <span class="placeholder">Replace with presenter name</span></p>
+    <p>Group members: <span class="placeholder">Replace with all member names</span></p>
+  </section>
+  <section class="slide">
+    <h2>Project overview</h2>
+    <p>TechBorrow organizes equipment inventory, requests, approvals, releases, returns, and maintenance in one web application with an Android web-view installer.</p>
+    <p>Goal: make equipment borrowing visible and accountable for students, instructors, and administrators.</p>
+  </section>
+  <section class="slide">
+    <h2>Users and workflow</h2>
+    <ul>
+      <li>Students submit a public request with identity details and a consented photo.</li>
+      <li>Instructors sign in, browse equipment, and submit requests.</li>
+      <li>Admins manage inventory, review requests, release equipment, inspect returns, and track maintenance.</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Technology and deliverables</h2>
+    <ul>
+      <li>PHP 8, MySQL, Bootstrap, session-based role access.</li>
+      <li>Progressive web application features and Android APK (minimum Android 6.0 / API 23).</li>
+      <li>PHP form endpoints are documented in the included Postman collection; they return HTML/redirects rather than JSON.</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>Testing and next steps</h2>
+    <ul>
+      <li>Execute the 30 functional, integration, and UAT cases in the QA plan.</li>
+      <li>Verify the deployed website and Android installer on target devices.</li>
+      <li>Replace all placeholders and demo credentials before final submission or public deployment.</li>
+    </ul>
+    <p>Repository: github.com/medaliariza/techborrow</p>
+  </section>
+  <footer>Use Left/Right arrows to navigate. Print to PDF to export the slides.</footer>
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    let active = 0;
+    function show(index) {
+      active = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === active));
+    }
+    document.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight' || event.key === 'PageDown') show(active + 1);
+      if (event.key === 'ArrowLeft' || event.key === 'PageUp') show(active - 1);
+    });
+  </script>
+</body>
+</html>

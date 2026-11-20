@@ -1,0 +1,127 @@
+{
+  "info": {
+    "_postman_id": "bc00b78d-a086-4edf-9b57-7a42a230b932",
+    "name": "TechBorrow Form Workflows",
+    "description": "Session-based PHP form endpoints. These handlers redirect and render HTML; they are not JSON REST APIs. Use a disposable test database. Set base_url and sign in before protected requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost/techborrow", "type": "string" },
+    { "key": "email", "value": "demo.instructor@example.test", "type": "string" },
+    { "key": "password", "value": "BorrowDemo#2026", "type": "string" },
+    { "key": "equipment_id", "value": "1", "type": "string" },
+    { "key": "request_id", "value": "1", "type": "string" },
+    { "key": "transaction_id", "value": "1", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Sign in (form)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/x-www-form-urlencoded" }],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "email", "value": "{{email}}", "type": "text" },
+            { "key": "password", "value": "{{password}}", "type": "text" }
+          ]
+        },
+        "url": { "raw": "{{base_url}}/index.php" },
+        "description": "Public login form. Use the resulting PHP session cookie for following protected page/action requests."
+      }
+    },
+    {
+      "name": "Submit instructor borrowing request",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/x-www-form-urlencoded" }],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "purpose", "value": "Postman workflow test", "type": "text" },
+            { "key": "location_room", "value": "QA Lab", "type": "text" },
+            { "key": "start_datetime", "value": "2027-01-15T09:00", "type": "text" },
+            { "key": "due_datetime", "value": "2027-01-15T12:00", "type": "text" },
+            { "key": "equipment_id[]", "value": "{{equipment_id}}", "type": "text" },
+            { "key": "quantity[]", "value": "1", "type": "text" }
+          ]
+        },
+        "url": { "raw": "{{base_url}}/actions/submit-request.php" },
+        "description": "Instructor-only. Use future dates and a currently available equipment ID; replace example dates when testing later."
+      }
+    },
+    {
+      "name": "Submit public student request",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "full_name", "value": "Demo Student", "type": "text" },
+            { "key": "student_number", "value": "DEMO-STU-001", "type": "text" },
+            { "key": "email", "value": "demo.student@example.test", "type": "text" },
+            { "key": "department", "value": "DEMO", "type": "text" },
+            { "key": "purpose", "value": "Postman workflow test", "type": "text" },
+            { "key": "location_room", "value": "QA Lab", "type": "text" },
+            { "key": "start_datetime", "value": "2027-01-15T09:00", "type": "text" },
+            { "key": "due_datetime", "value": "2027-01-15T12:00", "type": "text" },
+            { "key": "equipment_id[]", "value": "{{equipment_id}}", "type": "text" },
+            { "key": "quantity[]", "value": "1", "type": "text" },
+            { "key": "photo_consent", "value": "1", "type": "text" },
+            { "key": "student_photo", "type": "file", "src": "" }
+          ]
+        },
+        "url": { "raw": "{{base_url}}/actions/submit-student-request.php" },
+        "description": "Public multipart request. Select a real JPEG, PNG, or WebP under 5 MB for student_photo. Do not use a real person's image without consent."
+      }
+    },
+    {
+      "name": "Approve request (admin)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/x-www-form-urlencoded" }],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "request_id", "value": "{{request_id}}", "type": "text" },
+            { "key": "decision", "value": "approve", "type": "text" },
+            { "key": "reason", "value": "QA approval", "type": "text" }
+          ]
+        },
+        "url": { "raw": "{{base_url}}/actions/review-request.php" },
+        "description": "Admin-only; request must exist and still be pending. Sign in as demo.admin@example.test first."
+      }
+    },
+    {
+      "name": "Release approved request (admin)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/x-www-form-urlencoded" }],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [{ "key": "request_id", "value": "{{request_id}}", "type": "text" }]
+        },
+        "url": { "raw": "{{base_url}}/actions/release-item.php" },
+        "description": "Admin-only; use an approved request with available inventory."
+      }
+    },
+    {
+      "name": "Record return (admin)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/x-www-form-urlencoded" }],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "transaction_id", "value": "{{transaction_id}}", "type": "text" },
+            { "key": "return_datetime", "value": "2027-01-15T12:00", "type": "text" },
+            { "key": "condition", "value": "good", "type": "text" },
+            { "key": "remarks", "value": "Postman QA return", "type": "text" }
+          ]
+        },
+        "url": { "raw": "{{base_url}}/actions/process-return.php" },
+        "description": "Admin-only; requires a currently borrowed transaction. Use an actual non-future return time."
+      }
+    }
+  ]
+}

@@ -24,5 +24,9 @@ jobs:
             **/.git*
             **/.git*/**
             **/node_modules/**
-            **/*.apk
             **/*.idsig
+            **/android-app/**
+            **/database/**
+            **/docs/**
+            **/.github/**
+            config/database.local.php

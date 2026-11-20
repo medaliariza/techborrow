@@ -65,12 +65,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TECHBORROW | Register</title>
-    <meta name="theme-color" content="#0d6efd">
+    <meta name="theme-color" content="#132b4b">
     <link rel="manifest" href="<?php echo BASE_URL; ?>/manifest.webmanifest">
     <link rel="icon" href="<?php echo BASE_URL; ?>/assets/images/techborrow-icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="<?php echo BASE_URL; ?>/assets/images/techborrow-192.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/style.css?v=<?php echo filemtime(__DIR__ . '/assets/css/style.css'); ?>">
     <script src="<?php echo BASE_URL; ?>/assets/js/pwa.js" defer></script>
 </head>
 <body class="auth-body">
@@ -124,7 +124,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <a href="student-borrow.php">Student? Request equipment</a>
                 </div>
                 <div class="mt-2 text-center">
-                    <button type="button" class="btn btn-outline-secondary btn-sm d-none" data-install-app>Install TechBorrow</button>
+                    <a class="btn btn-outline-secondary btn-sm" href="<?php echo BASE_URL; ?>/download-apk.php">Download TechBorrow for Android</a>
+                    <div class="form-text">Download on an Android phone, then open the file from Downloads and confirm installation. APK files cannot be installed on Windows, iPhone, or iPad.</div>
                 </div>
             </div>
         </div>

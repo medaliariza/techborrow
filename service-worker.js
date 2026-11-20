@@ -1,4 +1,4 @@
-const CACHE_NAME = 'techborrow-shell-v1';
+const CACHE_NAME = 'techborrow-shell-v2';
 const APP_SCOPE = self.registration.scope;
 const OFFLINE_URL = new URL('offline.html', APP_SCOPE).toString();
 const ICON_192_URL = new URL('assets/images/techborrow-192.png', APP_SCOPE).toString();

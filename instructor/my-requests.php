@@ -8,11 +8,16 @@ $user = currentUser();
 $stmt = $db->prepare('SELECT * FROM borrowing_requests WHERE user_id = :id ORDER BY created_at DESC');
 $stmt->execute(['id' => $user['user_id']]);
 $requests = $stmt->fetchAll();
+$clearRequestDraft = ($_SESSION['clear_instructor_request_draft'] ?? '') === 'instructor-borrow-' . (int) $user['user_id'];
+unset($_SESSION['clear_instructor_request_draft']);
 $pageTitle = 'My Requests';
 $activePage = 'instructor-my-requests';
 include __DIR__ . '/../includes/header.php';
 ?>
 <h1 class="mb-4">My Borrowing Requests</h1>
+<?php if ($clearRequestDraft): ?>
+    <div data-clear-form-draft="instructor-borrow-<?php echo (int) $user['user_id']; ?>" hidden></div>
+<?php endif; ?>
 <div class="card p-3">
     <div class="table-responsive">
         <table class="table table-striped align-middle">

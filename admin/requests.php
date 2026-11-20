@@ -4,7 +4,7 @@ require_once __DIR__ . '/../includes/auth.php';
 requireRole(['admin']);
 
 $db = getDbConnection();
-$requests = $db->query('SELECT r.*, u.full_name, u.student_number FROM borrowing_requests r JOIN users u ON u.user_id = r.user_id ORDER BY r.created_at DESC')->fetchAll();
+$requests = $db->query('SELECT r.*, u.full_name, u.role, u.student_number FROM borrowing_requests r JOIN users u ON u.user_id = r.user_id ORDER BY r.created_at DESC')->fetchAll();
 $pageTitle = 'Borrowing Requests';
 $activePage = 'admin-requests';
 include __DIR__ . '/../includes/header.php';
@@ -16,7 +16,6 @@ include __DIR__ . '/../includes/header.php';
             <thead>
                 <tr>
                     <th>Requester</th>
-                    <th>Student Number</th>
                     <th>Purpose</th>
                     <th>Start</th>
                     <th>Due</th>
@@ -28,8 +27,12 @@ include __DIR__ . '/../includes/header.php';
                 <?php if ($requests): ?>
                     <?php foreach ($requests as $request): ?>
                         <tr>
-                            <td><?php echo e($request['full_name']); ?></td>
-                            <td><?php echo e($request['student_number'] ?? '—'); ?></td>
+                            <td>
+                                <?php echo e($request['full_name']); ?>
+                                <?php if ($request['role'] === 'student' && $request['student_number']): ?>
+                                    <div class="small text-muted">Student #<?php echo e($request['student_number']); ?></div>
+                                <?php endif; ?>
+                            </td>
                             <td><?php echo e($request['purpose']); ?></td>
                             <td><?php echo e(formatDateTime($request['start_datetime'])); ?></td>
                             <td><?php echo e(formatDateTime($request['due_datetime'])); ?></td>
@@ -38,7 +41,7 @@ include __DIR__ . '/../includes/header.php';
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <tr><td colspan="7">No requests found.</td></tr>
+                    <tr><td colspan="6">No requests found.</td></tr>
                 <?php endif; ?>
             </tbody>
         </table>

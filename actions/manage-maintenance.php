@@ -15,7 +15,6 @@ $maintenanceId = (int) ($_POST['maintenance_id'] ?? 0);
 $issue = trim($_POST['issue_description'] ?? '');
 $status = $_POST['status'] ?? 'reported';
 $assignedTo = trim($_POST['assigned_to'] ?? '');
-$costInput = trim($_POST['repair_cost'] ?? '0');
 $allowedStatuses = ['reported', 'in_progress', 'completed'];
 
 try {
@@ -31,10 +30,6 @@ try {
     if ($action === 'update' && $maintenanceId <= 0) {
         throw new InvalidArgumentException('Select a valid maintenance record to update.');
     }
-    if (!is_numeric($costInput) || (float) $costInput < 0 || (float) $costInput > 99999999.99) {
-        throw new InvalidArgumentException('Repair cost must be between 0 and 99,999,999.99.');
-    }
-
     $equipmentCheck = $db->prepare('SELECT equipment_id FROM equipment WHERE equipment_id = :id LIMIT 1');
     $equipmentCheck->execute(['id' => $equipmentId]);
     if (!$equipmentCheck->fetch()) {
@@ -55,13 +50,12 @@ try {
             $completedAt = $existingRecord['completed_at'] ?: date('Y-m-d H:i:s');
         }
 
-        $save = $db->prepare('UPDATE maintenance_records SET equipment_id = :equipment_id, issue_description = :issue_description, status = :status, assigned_to = :assigned_to, repair_cost = :repair_cost, completed_at = :completed_at WHERE maintenance_id = :maintenance_id');
+        $save = $db->prepare('UPDATE maintenance_records SET equipment_id = :equipment_id, issue_description = :issue_description, status = :status, assigned_to = :assigned_to, completed_at = :completed_at WHERE maintenance_id = :maintenance_id');
         $save->execute([
             'equipment_id' => $equipmentId,
             'issue_description' => $issue,
             'status' => $status,
             'assigned_to' => $assignedTo !== '' ? $assignedTo : null,
-            'repair_cost' => number_format((float) $costInput, 2, '.', ''),
             'completed_at' => $completedAt,
             'maintenance_id' => $maintenanceId,
         ]);
@@ -73,14 +67,13 @@ try {
             $completedAt = date('Y-m-d H:i:s');
         }
 
-        $save = $db->prepare('INSERT INTO maintenance_records (equipment_id, reported_by, issue_description, status, assigned_to, repair_cost, reported_at, completed_at) VALUES (:equipment_id, :reported_by, :issue_description, :status, :assigned_to, :repair_cost, NOW(), :completed_at)');
+        $save = $db->prepare('INSERT INTO maintenance_records (equipment_id, reported_by, issue_description, status, assigned_to, reported_at, completed_at) VALUES (:equipment_id, :reported_by, :issue_description, :status, :assigned_to, NOW(), :completed_at)');
         $save->execute([
             'equipment_id' => $equipmentId,
             'reported_by' => $admin['user_id'],
             'issue_description' => $issue,
             'status' => $status,
             'assigned_to' => $assignedTo !== '' ? $assignedTo : null,
-            'repair_cost' => number_format((float) $costInput, 2, '.', ''),
             'completed_at' => $completedAt,
         ]);
         $savedId = (int) $db->lastInsertId();

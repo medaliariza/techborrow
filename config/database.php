@@ -5,21 +5,33 @@ function getDbConnection(): PDO
     static $pdo = null;
 
     if ($pdo === null) {
-        // Check if running locally on XAMPP or live on InfinityFree
-        $isLocal = in_array($_SERVER['HTTP_HOST'] ?? '', ['localhost', '127.0.0.1']);
+        $requestHost = strtolower(preg_replace('/:\d+$/', '', $_SERVER['HTTP_HOST'] ?? ''));
+        $isLocal = in_array($requestHost, ['localhost', '127.0.0.1'], true);
 
         if ($isLocal) {
-            // Local XAMPP settings
             $host = '127.0.0.1';
             $db   = 'techborrow_db';
             $user = 'root';
             $pass = '';
         } else {
-            // Live InfinityFree settings (Replace with your exact details)
-            $host = 'sql200.infinityfree.com'; // Your MySQL Host Name
-            $db   = 'if0_43446197_techborrow_db'; // Your MySQL DB Name
-            $user = 'if0_43446197';            // Your MySQL User Name
-            $pass = 'techborrow2026';   // Your InfinityFree Account Password
+            $credentialsFile = __DIR__ . '/database.local.php';
+
+            if (!is_file($credentialsFile)) {
+                die('Live database credentials are not configured. Create config/database.local.php using the example file.');
+            }
+
+            $credentials = require $credentialsFile;
+            if (!is_array($credentials)) {
+                die('Live database credentials are invalid. Check config/database.local.php.');
+            }
+
+            $host = trim((string) ($credentials['host'] ?? ''));
+            $db = trim((string) ($credentials['database'] ?? ''));
+            $user = trim((string) ($credentials['username'] ?? ''));
+            $pass = (string) ($credentials['password'] ?? '');
+            if ($host === '' || $db === '' || $user === '' || $pass === '') {
+                die('Live database credentials are incomplete. Check config/database.local.php.');
+            }
         }
 
         $charset = 'utf8mb4';

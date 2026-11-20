@@ -1,0 +1,8 @@
+<?php
+
+return [
+    'host' => 'YOUR_MYSQL_HOST',
+    'database' => 'YOUR_MYSQL_DATABASE',
+    'username' => 'YOUR_MYSQL_USERNAME',
+    'password' => 'REPLACE_WITH_YOUR_ROTATED_DATABASE_PASSWORD',
+];

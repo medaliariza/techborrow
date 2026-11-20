@@ -23,7 +23,7 @@ if ($maintenanceFrom !== '' && $maintenanceTo !== '' && $maintenanceFrom > $main
     [$maintenanceFrom, $maintenanceTo] = [$maintenanceTo, $maintenanceFrom];
 }
 
-$maintenanceSql = 'SELECT m.maintenance_id, m.issue_description, m.status, m.assigned_to, m.repair_cost, m.reported_at, m.completed_at, e.equipment_code, e.name AS equipment_name, u.full_name AS reported_by_name FROM maintenance_records m JOIN equipment e ON e.equipment_id = m.equipment_id JOIN users u ON u.user_id = m.reported_by';
+$maintenanceSql = 'SELECT m.maintenance_id, m.issue_description, m.status, m.assigned_to, m.reported_at, m.completed_at, e.equipment_code, e.name AS equipment_name, u.full_name AS reported_by_name FROM maintenance_records m JOIN equipment e ON e.equipment_id = m.equipment_id JOIN users u ON u.user_id = m.reported_by';
 $maintenanceConditions = [];
 $maintenanceParams = [];
 if ($maintenanceStatus !== '') {
@@ -45,15 +45,12 @@ $maintenanceSql .= ' ORDER BY m.reported_at DESC';
 $maintenanceQuery = $db->prepare($maintenanceSql);
 $maintenanceQuery->execute($maintenanceParams);
 $maintenanceRecords = $maintenanceQuery->fetchAll();
-$maintenanceCostTotal = array_sum(array_map(static function ($record) {
-    return (float) $record['repair_cost'];
-}, $maintenanceRecords));
 
 if (($_GET['export'] ?? '') === 'maintenance-csv') {
     header('Content-Type: text/csv; charset=utf-8');
     header('Content-Disposition: attachment; filename="techborrow-maintenance-report-' . date('Y-m-d') . '.csv"');
     $output = fopen('php://output', 'w');
-    fputcsv($output, ['Equipment Code', 'Equipment', 'Issue', 'Status', 'Assigned To', 'Reported By', 'Reported At', 'Completed At', 'Repair Cost']);
+    fputcsv($output, ['Equipment Code', 'Equipment', 'Issue', 'Status', 'Assigned To', 'Reported By', 'Reported At', 'Completed At']);
     foreach ($maintenanceRecords as $record) {
         $fields = [
             $record['equipment_code'],
@@ -64,7 +61,6 @@ if (($_GET['export'] ?? '') === 'maintenance-csv') {
             $record['reported_by_name'],
             $record['reported_at'],
             $record['completed_at'],
-            $record['repair_cost'],
         ];
         $fields = array_map(static function ($value) {
             $value = (string) $value;
@@ -219,12 +215,6 @@ include __DIR__ . '/../includes/header.php';
                 <strong class="metric-value"><?php echo count($maintenanceRecords); ?></strong>
             </div>
         </div>
-        <div class="col-12 col-sm-6">
-            <div class="card p-3 h-100">
-                <span class="text-muted">Repair cost total</span>
-                <strong class="metric-value">PHP <?php echo e(number_format($maintenanceCostTotal, 2)); ?></strong>
-            </div>
-        </div>
     </div>
 
     <div class="card p-3">
@@ -239,7 +229,6 @@ include __DIR__ . '/../includes/header.php';
                         <th>Reported By</th>
                         <th>Reported</th>
                         <th>Completed</th>
-                        <th class="text-end">Repair Cost</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -253,11 +242,10 @@ include __DIR__ . '/../includes/header.php';
                                 <td><?php echo e($record['reported_by_name']); ?></td>
                                 <td><?php echo e(formatDateTime($record['reported_at'])); ?></td>
                                 <td><?php echo e(formatDateTime($record['completed_at'])); ?></td>
-                                <td class="text-end">PHP <?php echo e(number_format((float) $record['repair_cost'], 2)); ?></td>
                             </tr>
                         <?php endforeach; ?>
                     <?php else: ?>
-                        <tr><td colspan="8" class="text-center text-muted py-4">No maintenance records match these filters.</td></tr>
+                        <tr><td colspan="7" class="text-center text-muted py-4">No maintenance records match these filters.</td></tr>
                     <?php endif; ?>
                 </tbody>
             </table>

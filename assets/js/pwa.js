@@ -14,32 +14,48 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     let installPrompt = null;
+    const installHelp = document.querySelectorAll('[data-install-help]');
+
     window.addEventListener('beforeinstallprompt', function (event) {
         event.preventDefault();
         installPrompt = event;
-        installButtons.forEach(function (button) {
-            button.classList.remove('d-none');
-        });
     });
 
     installButtons.forEach(function (button) {
         button.addEventListener('click', async function () {
-            if (!installPrompt) {
+            if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+                installHelp.forEach(function (help) {
+                    help.textContent = 'TechBorrow is already installed on this device.';
+                });
                 return;
             }
-            installPrompt.prompt();
-            await installPrompt.userChoice;
-            installPrompt = null;
-            installButtons.forEach(function (installButton) {
-                installButton.classList.add('d-none');
+
+            if (installPrompt) {
+                installPrompt.prompt();
+                const choice = await installPrompt.userChoice;
+                installPrompt = null;
+                if (choice.outcome === 'accepted') {
+                    installHelp.forEach(function (help) {
+                        help.textContent = 'TechBorrow is installing.';
+                    });
+                }
+                return;
+            }
+
+            const isAppleMobile = /iPad|iPhone|iPod/.test(window.navigator.userAgent);
+            const message = isAppleMobile
+                ? 'To install, tap Share in Safari, then choose Add to Home Screen.'
+                : 'To install, open your browser menu and choose Install app or Add to Home screen.';
+            installHelp.forEach(function (help) {
+                help.textContent = message;
             });
         });
     });
 
     window.addEventListener('appinstalled', function () {
         installPrompt = null;
-        installButtons.forEach(function (button) {
-            button.classList.add('d-none');
+        installHelp.forEach(function (help) {
+            help.textContent = 'TechBorrow is installed on this device.';
         });
     });
 });

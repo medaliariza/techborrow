@@ -57,10 +57,6 @@ include __DIR__ . '/../includes/header.php';
                     <label class="form-label" for="assignedTo">Assigned to</label>
                     <input class="form-control" id="assignedTo" name="assigned_to" maxlength="150" value="<?php echo e($editingRecord['assigned_to'] ?? ''); ?>">
                 </div>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <label class="form-label" for="repairCost">Repair cost</label>
-                    <input class="form-control" id="repairCost" name="repair_cost" type="number" min="0" max="99999999.99" step="0.01" value="<?php echo e($editingRecord['repair_cost'] ?? '0.00'); ?>" required>
-                </div>
                 <div class="col-12 d-flex flex-wrap gap-2">
                     <button class="btn btn-primary" type="submit"><?php echo $editingRecord ? 'Save Maintenance Record' : 'Log Maintenance Issue'; ?></button>
                     <?php if ($editingRecord): ?>
@@ -83,7 +79,6 @@ include __DIR__ . '/../includes/header.php';
                     <th>Assigned To</th>
                     <th>Reported</th>
                     <th>Completed</th>
-                    <th>Repair Cost</th>
                     <th>Reported By</th>
                     <th>Action</th>
                 </tr>
@@ -98,13 +93,12 @@ include __DIR__ . '/../includes/header.php';
                             <td><?php echo e($record['assigned_to'] ?: 'Unassigned'); ?></td>
                             <td><?php echo e(formatDateTime($record['reported_at'])); ?></td>
                             <td><?php echo e(formatDateTime($record['completed_at'])); ?></td>
-                            <td>PHP <?php echo e(number_format((float) $record['repair_cost'], 2)); ?></td>
                             <td><?php echo e($record['reported_by_name']); ?></td>
                             <td><a class="btn btn-sm btn-outline-primary" href="maintenance.php?edit_id=<?php echo (int) $record['maintenance_id']; ?>">Edit</a></td>
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <tr><td colspan="9">No maintenance records.</td></tr>
+                    <tr><td colspan="8">No maintenance records.</td></tr>
                 <?php endif; ?>
             </tbody>
         </table>

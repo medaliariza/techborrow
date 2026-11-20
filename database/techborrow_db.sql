@@ -1,6 +1,7 @@
-DROP DATABASE IF EXISTS techborrow_db;
-CREATE DATABASE IF NOT EXISTS techborrow_db;
-USE techborrow_db;
+-- Import this file after selecting your existing TechBorrow database in phpMyAdmin.
+-- This file creates the application tables; it does not create or drop a database.
+-- After importing, register your own account, then promote it in phpMyAdmin:
+-- UPDATE users SET role = 'admin' WHERE email = 'your-account-email';
 
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -131,7 +132,6 @@ CREATE TABLE maintenance_records (
     issue_description TEXT NOT NULL,
     status ENUM('reported', 'in_progress', 'completed') NOT NULL DEFAULT 'reported',
     assigned_to VARCHAR(150) DEFAULT NULL,
-    repair_cost DECIMAL(10,2) DEFAULT 0.00,
     reported_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     completed_at DATETIME DEFAULT NULL,
     CONSTRAINT fk_maintenance_equipment FOREIGN KEY (equipment_id) REFERENCES equipment(equipment_id),
@@ -167,7 +167,3 @@ CREATE TABLE audit_logs (
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_audit_user FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
-
-INSERT INTO users (full_name, email, password_hash, role, department, student_number, account_status, created_at) VALUES
-('System Admin', 'admin@techborrow.local', '$2y$10$yTcfcg4YsIXvp2l/DwY83eKiKY8ec3LpXkzrI1NpPI9zr8blUGY.y', 'admin', NULL, NULL, 'active', NOW()),
-('Sample Instructor', 'teacher@techborrow.local', '$2y$10$O52qTih/t27ao5d/AvBkae0PsFRaBZ9wZDtj.1s83SlKW2yYfmB2O', 'instructor', 'Computer Science', NULL, 'active', NOW());

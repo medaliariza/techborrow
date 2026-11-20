@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.webkit.DownloadListener;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -15,7 +16,7 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 public final class MainActivity extends Activity {
-    private static final String APP_URL = "https://techborrow.com/techborrow/";
+    private static final String APP_URL = "https://techborrow.freedev.app/techborrow/";
     private static final int FILE_CHOOSER_REQUEST = 1001;
 
     private WebView webView;
@@ -68,6 +69,22 @@ public final class MainActivity extends Activity {
                 }
             }
         });
+        webView.setDownloadListener(new DownloadListener() {
+            @Override
+            public void onDownloadStart(
+                    String url,
+                    String userAgent,
+                    String contentDisposition,
+                    String mimeType,
+                    long contentLength) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                try {
+                    startActivity(intent);
+                } catch (ActivityNotFoundException exception) {
+                    Toast.makeText(MainActivity.this, "No browser is available to download this file.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
         if (savedInstanceState == null) {
             webView.loadUrl(APP_URL);
@@ -79,7 +96,7 @@ public final class MainActivity extends Activity {
     private boolean routeUrl(Uri uri) {
         String scheme = uri.getScheme();
         if ("https".equalsIgnoreCase(scheme)
-                && "techborrow.com".equalsIgnoreCase(uri.getHost())) {
+                && "techborrow.freedev.app".equalsIgnoreCase(uri.getHost())) {
             return false;
         }
         if ("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) {

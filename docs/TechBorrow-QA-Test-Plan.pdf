@@ -1,0 +1,394 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R] /Count 9 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 3070 >>
+stream
+0.08 0.30 0.58 rg BT /F2 9 Tf 1 0 0 1 48 770 Tm (TECHBORROW  |  SOFTWARE TEST PLAN AND QA SUITE) Tj ET
+0.72 0.78 0.86 RG 0.7 w 48 758 m 564 758 l S
+0.08 0.30 0.58 rg BT /F2 22 Tf 1 0 0 1 50 738 Tm (TechBorrow - QA Test Plan) Tj ET
+0.12 0.16 0.22 rg BT /F1 10 Tf 1 0 0 1 58 708 Tm (Technical Equipment Borrowing and Inventory System | Version 1.0 | Prepared 2026-11-20) Tj ET
+0.08 0.30 0.58 rg BT /F2 13 Tf 1 0 0 1 50 684 Tm (Test plan) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 663 Tm (Objective: validate account access, equipment discovery, request submission, admin review,) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 70 652 Tm (release, returns, announcements, maintenance, reports, and role boundaries.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 641 Tm (Scope: functional tests; PHP/session/MySQL integration checks; student, instructor/teacher,) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 70 630 Tm (and administrator UAT; Android/PWA smoke checks when a device is available.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 619 Tm (Environment: PHP 8.2+, Apache, MySQL/MariaDB, isolated test database. Import) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 70 608 Tm (database/techborrow_db.sql; optional demo accounts are in docs/demo-accounts.sql.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 597 Tm (Data safety: use disposable fixtures only. Use synthetic consented test photos under 5 MB.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 70 586 Tm (Do not execute state-changing cases against production records.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 575 Tm (Entry: app/database available, test logins and equipment fixtures prepared. Exit: all 30) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 70 564 Tm (cases have actual outcomes/evidence or blockers, defects are logged, and critical fixes are) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 70 553 Tm (retested.) Tj ET
+0.08 0.30 0.58 rg BT /F2 13 Tf 1 0 0 1 50 534 Tm (Execution summary) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 513 Tm (30 sample cases are provided on the following pages. All cases currently have status Not) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 70 502 Tm (Run. Expected outcomes are test oracles, not reported results.) Tj ET
+0.08 0.30 0.58 rg BT /F2 13 Tf 1 0 0 1 50 487 Tm (Role and app notes) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 466 Tm (Roles: admin, instructor \(teacher\), student. PHP handlers use HTML forms and redirects, not) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 70 455 Tm (a JSON REST API. Verify state in the app/database as well as Postman response behavior.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 444 Tm (The Android package targets API 23+ \(Android 6.0+\). Installation and device compatibility) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 70 433 Tm (must be confirmed on the target handset.) Tj ET
+0.72 0.78 0.86 RG 0.5 w 48 42 m 564 42 l S
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 48 27 Tm (Prepared 2026-11-20 | Sample cases are Not Run until executed.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 536 27 Tm (1) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 3454 >>
+stream
+0.08 0.30 0.58 rg BT /F2 9 Tf 1 0 0 1 48 770 Tm (TECHBORROW  |  SOFTWARE TEST PLAN AND QA SUITE) Tj ET
+0.72 0.78 0.86 RG 0.7 w 48 758 m 564 758 l S
+0.08 0.30 0.58 rg BT /F2 13 Tf 1 0 0 1 50 734 Tm (Sample test cases 01-05) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 713 Tm (TC-01 - Sign in with active account) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 699 Tm (Type: Functional | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 689 Tm (Preconditions: Active instructor test account exists.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 679 Tm (Steps: Open sign-in; enter the active email and correct password; submit.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 669 Tm (Expected: User is signed in and routed to the role-appropriate dashboard.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 651 Tm (TC-02 - Reject invalid sign-in credentials) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 637 Tm (Type: Functional | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 627 Tm (Preconditions: Sign-in page is available.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 617 Tm (Steps: Submit a known email with an incorrect password.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 607 Tm (Expected: Sign-in is denied and a clear error is shown; no authenticated session is created.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 589 Tm (TC-03 - Block inactive account sign-in) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 575 Tm (Type: Integration | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 565 Tm (Preconditions: An account has `account_status=inactive`.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 555 Tm (Steps: Submit that account's correct email and password.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 545 Tm (Expected: Sign-in is denied with the inactive/invalid account message.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 527 Tm (TC-04 - Register an instructor account) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 513 Tm (Type: Functional | Priority: Medium | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 503 Tm (Preconditions: Use an email not already in the test database.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 493 Tm (Steps: Open registration; enter valid required values and matching password confirmation;) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 70 483 Tm (submit.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 473 Tm (Expected: Account is created with instructor role and can sign in.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 455 Tm (TC-05 - Browse and search equipment) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 441 Tm (Type: Functional | Priority: Medium | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 431 Tm (Preconditions: At least two equipment records with distinguishable names/codes exist.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 421 Tm (Steps: Sign in as instructor; open equipment; search for one known name or code.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 411 Tm (Expected: Matching equipment is shown and unrelated records are excluded.) Tj ET
+0.72 0.78 0.86 RG 0.5 w 48 42 m 564 42 l S
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 48 27 Tm (Prepared 2026-11-20 | Sample cases are Not Run until executed.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 536 27 Tm (2) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 3603 >>
+stream
+0.08 0.30 0.58 rg BT /F2 9 Tf 1 0 0 1 48 770 Tm (TECHBORROW  |  SOFTWARE TEST PLAN AND QA SUITE) Tj ET
+0.72 0.78 0.86 RG 0.7 w 48 758 m 564 758 l S
+0.08 0.30 0.58 rg BT /F2 13 Tf 1 0 0 1 50 734 Tm (Sample test cases 06-10) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 713 Tm (TC-06 - View equipment details) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 699 Tm (Type: Functional | Priority: Medium | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 689 Tm (Preconditions: An equipment record exists.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 679 Tm (Steps: Open its details from the equipment list.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 669 Tm (Expected: Name, identifying information, condition, availability, and any image are displayed) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 70 659 Tm (consistently with the record.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 641 Tm (TC-07 - Submit a valid instructor request) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 627 Tm (Type: Functional | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 617 Tm (Preconditions: Sign in as instructor; selected item has sufficient date-range availability.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 607 Tm (Steps: Enter purpose, room, future start/due times, equipment, and positive quantity; submit.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 597 Tm (Expected: Request and request items are saved as pending; confirmation appears in the request) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 70 587 Tm (list.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 569 Tm (TC-08 - Require fields in instructor request) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 555 Tm (Type: Functional | Priority: Medium | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 545 Tm (Preconditions: Sign in as instructor and open request form.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 535 Tm (Steps: Submit with a required field or all equipment selections omitted.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 525 Tm (Expected: Request is not saved and form shows a validation message.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 507 Tm (TC-09 - Reject reversed request dates) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 493 Tm (Type: Functional | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 483 Tm (Preconditions: Sign in as instructor.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 473 Tm (Steps: Set due time earlier than or equal to start time and submit an otherwise valid request.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 463 Tm (Expected: Request is not saved and user is told start must precede due.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 445 Tm (TC-10 - Enforce requested quantity availability) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 431 Tm (Type: Integration | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 421 Tm (Preconditions: Fixture equipment has a known available quantity for a selected period.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 411 Tm (Steps: Request one more than that quantity.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 401 Tm (Expected: Request is rejected; no pending request or inventory decrement is committed.) Tj ET
+0.72 0.78 0.86 RG 0.5 w 48 42 m 564 42 l S
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 48 27 Tm (Prepared 2026-11-20 | Sample cases are Not Run until executed.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 536 27 Tm (3) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 3754 >>
+stream
+0.08 0.30 0.58 rg BT /F2 9 Tf 1 0 0 1 48 770 Tm (TECHBORROW  |  SOFTWARE TEST PLAN AND QA SUITE) Tj ET
+0.72 0.78 0.86 RG 0.7 w 48 758 m 564 758 l S
+0.08 0.30 0.58 rg BT /F2 13 Tf 1 0 0 1 50 734 Tm (Sample test cases 11-15) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 713 Tm (TC-11 - Submit public student request with valid photo) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 699 Tm (Type: Functional | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 689 Tm (Preconditions: Public request page is available; fixture equipment available; consented) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 70 679 Tm (synthetic image under 5 MB.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 669 Tm (Steps: Complete student details, dates, equipment/quantity, select photo, consent, and submit.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 659 Tm (Expected: Student record \(when new\), pending request, item, and private photo file are) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 70 649 Tm (recorded; confirmation is shown.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 631 Tm (TC-12 - Require student photo consent) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 617 Tm (Type: Functional | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 607 Tm (Preconditions: Public request page is available.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 597 Tm (Steps: Complete all valid fields and attach a test photo but leave consent unchecked.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 587 Tm (Expected: Submission is rejected with a consent validation message and no request is saved.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 569 Tm (TC-13 - Reject unsupported or oversized student photo) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 555 Tm (Type: Functional | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 545 Tm (Preconditions: Public request form and test fixture files are available.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 535 Tm (Steps: Submit otherwise valid data with a non-image file or image larger than 5 MB.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 525 Tm (Expected: Upload is rejected and no request is saved.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 507 Tm (TC-14 - Prevent duplicate student identity) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 493 Tm (Type: Integration | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 483 Tm (Preconditions: A student account is already registered with a student number/email pair.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 473 Tm (Steps: Submit a public request reusing only one of those identifiers with conflicting details.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 463 Tm (Expected: Request is rejected with a conflict message; no duplicate account/request is) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 70 453 Tm (committed.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 435 Tm (TC-15 - Create and list a category) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 421 Tm (Type: Functional | Priority: Medium | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 411 Tm (Preconditions: Sign in as admin.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 401 Tm (Steps: Add a uniquely named category; return to categories list.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 391 Tm (Expected: Category is stored and displayed once.) Tj ET
+0.72 0.78 0.86 RG 0.5 w 48 42 m 564 42 l S
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 48 27 Tm (Prepared 2026-11-20 | Sample cases are Not Run until executed.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 536 27 Tm (4) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 3671 >>
+stream
+0.08 0.30 0.58 rg BT /F2 9 Tf 1 0 0 1 48 770 Tm (TECHBORROW  |  SOFTWARE TEST PLAN AND QA SUITE) Tj ET
+0.72 0.78 0.86 RG 0.7 w 48 758 m 564 758 l S
+0.08 0.30 0.58 rg BT /F2 13 Tf 1 0 0 1 50 734 Tm (Sample test cases 16-20) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 713 Tm (TC-16 - Create equipment with image) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 699 Tm (Type: Integration | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 689 Tm (Preconditions: Sign in as admin; category exists; valid small image fixture available.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 679 Tm (Steps: Create equipment with unique code, name, category, quantity, condition, and image.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 669 Tm (Expected: Record and image are saved; quantity and status appear correctly in inventory.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 651 Tm (TC-17 - Update and delete equipment) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 637 Tm (Type: Functional | Priority: Medium | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 627 Tm (Preconditions: A disposable equipment fixture exists and is not referenced by active) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 70 617 Tm (borrowing.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 607 Tm (Steps: Edit a description/condition; save; then delete the disposable fixture.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 597 Tm (Expected: Edit persists and deletion is reflected; unrelated inventory remains unchanged.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 579 Tm (TC-18 - Create and update maintenance record) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 565 Tm (Type: Integration | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 555 Tm (Preconditions: Sign in as admin; equipment fixture exists.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 545 Tm (Steps: Report an issue; assign it and change status to in progress; save each change.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 535 Tm (Expected: Maintenance record and selected status/assignee persist and are visible.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 517 Tm (TC-19 - Publish and edit announcement) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 503 Tm (Type: Functional | Priority: Medium | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 493 Tm (Preconditions: Sign in as admin.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 483 Tm (Steps: Create an announcement; verify it is visible; edit its text and save.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 473 Tm (Expected: Announcement is displayed with updated text and no duplicate is created.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 455 Tm (TC-20 - Review a pending request as approved) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 441 Tm (Type: Integration | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 431 Tm (Preconditions: Sign in as admin; pending request and sufficient inventory exist.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 421 Tm (Steps: Approve the request in the review page.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 411 Tm (Expected: Status becomes approved, quantities are approved, review/audit record is saved, and) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 70 401 Tm (borrower is notified.) Tj ET
+0.72 0.78 0.86 RG 0.5 w 48 42 m 564 42 l S
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 48 27 Tm (Prepared 2026-11-20 | Sample cases are Not Run until executed.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 536 27 Tm (5) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 3640 >>
+stream
+0.08 0.30 0.58 rg BT /F2 9 Tf 1 0 0 1 48 770 Tm (TECHBORROW  |  SOFTWARE TEST PLAN AND QA SUITE) Tj ET
+0.72 0.78 0.86 RG 0.7 w 48 758 m 564 758 l S
+0.08 0.30 0.58 rg BT /F2 13 Tf 1 0 0 1 50 734 Tm (Sample test cases 21-25) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 713 Tm (TC-21 - Review a pending request as unavailable) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 699 Tm (Type: Integration | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 689 Tm (Preconditions: Sign in as admin; a separate pending request exists.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 679 Tm (Steps: Reject/unavailable the request and enter a reason.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 669 Tm (Expected: Status becomes unavailable; review and notification include the decision/reason.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 651 Tm (TC-22 - Prevent a second review decision) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 637 Tm (Type: Integration | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 627 Tm (Preconditions: A request has already been approved or marked unavailable.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 617 Tm (Steps: Attempt to submit another review decision for the same request.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 607 Tm (Expected: Second decision is rejected; original decision and inventory remain unchanged.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 589 Tm (TC-23 - Release approved equipment) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 575 Tm (Type: Integration | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 565 Tm (Preconditions: Sign in as admin; approved request and sufficient equipment are available.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 555 Tm (Steps: Release the approved request.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 545 Tm (Expected: Borrow transaction/items are created; request becomes borrowed; available quantity) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 70 535 Tm (decreases once; borrower is notified.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 517 Tm (TC-24 - Block release of unapproved request) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 503 Tm (Type: Functional | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 493 Tm (Preconditions: A pending or unavailable request exists.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 483 Tm (Steps: Attempt to release it.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 473 Tm (Expected: Release is refused; no transaction is created and inventory is unchanged.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 455 Tm (TC-25 - Record good return) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 441 Tm (Type: Integration | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 431 Tm (Preconditions: Sign in as admin; borrowed transaction with outstanding items exists.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 421 Tm (Steps: Record a valid non-future return time and condition `good`.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 411 Tm (Expected: Return record/items are saved, transaction/request become returned, availability is) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 70 401 Tm (restored up to total, and borrower is notified.) Tj ET
+0.72 0.78 0.86 RG 0.5 w 48 42 m 564 42 l S
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 48 27 Tm (Prepared 2026-11-20 | Sample cases are Not Run until executed.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 536 27 Tm (6) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 15 0 R >>
+endobj
+17 0 obj
+<< /Length 3664 >>
+stream
+0.08 0.30 0.58 rg BT /F2 9 Tf 1 0 0 1 48 770 Tm (TECHBORROW  |  SOFTWARE TEST PLAN AND QA SUITE) Tj ET
+0.72 0.78 0.86 RG 0.7 w 48 758 m 564 758 l S
+0.08 0.30 0.58 rg BT /F2 13 Tf 1 0 0 1 50 734 Tm (Sample test cases 26-30) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 713 Tm (TC-26 - Flag damaged return for maintenance) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 699 Tm (Type: Integration | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 689 Tm (Preconditions: Separate borrowed fixture exists with known inventory counts.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 679 Tm (Steps: Record return condition `damaged`.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 669 Tm (Expected: Return is recorded and transaction closed; equipment is flagged maintenance and is) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 70 659 Tm (not returned to available stock.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 641 Tm (TC-27 - Reject future return time) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 627 Tm (Type: Functional | Priority: Medium | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 617 Tm (Preconditions: A borrowed transaction exists.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 607 Tm (Steps: Submit return datetime later than current time.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 597 Tm (Expected: Validation rejects the date and no return or inventory change is saved.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 579 Tm (TC-28 - Enforce role access to admin action) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 565 Tm (Type: Integration | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 555 Tm (Preconditions: Sign in as instructor; know a disposable request ID.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 545 Tm (Steps: POST a review request to the admin review handler.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 535 Tm (Expected: Instructor is not authorized; request status and review tables remain unchanged.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 517 Tm (TC-29 - Prevent suspended account access) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 503 Tm (Type: Integration | Priority: High | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 493 Tm (Preconditions: Set a test account to suspended.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 483 Tm (Steps: Sign out and attempt sign-in with its correct credentials.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 473 Tm (Expected: Sign-in is denied; no authenticated session is granted.) Tj ET
+0.08 0.30 0.58 rg BT /F2 10 Tf 1 0 0 1 52 455 Tm (TC-30 - Verify report and notification flow) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 441 Tm (Type: UAT / Integration | Priority: Medium | Status: Not Run) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 431 Tm (Preconditions: Test database contains borrowing, return, and notification fixtures.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 421 Tm (Steps: Sign in as admin and open reports; sign in as borrower and review dashboard) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 70 411 Tm (notifications.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 58 401 Tm (Expected: Report counts/data agree with fixtures; borrower sees relevant notifications and can) Tj ET
+0.12 0.16 0.22 rg BT /F1 8.5 Tf 1 0 0 1 70 391 Tm (mark one read.) Tj ET
+0.72 0.78 0.86 RG 0.5 w 48 42 m 564 42 l S
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 48 27 Tm (Prepared 2026-11-20 | Sample cases are Not Run until executed.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 536 27 Tm (7) Tj ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 17 0 R >>
+endobj
+19 0 obj
+<< /Length 2573 >>
+stream
+0.08 0.30 0.58 rg BT /F2 9 Tf 1 0 0 1 48 770 Tm (TECHBORROW  |  SOFTWARE TEST PLAN AND QA SUITE) Tj ET
+0.72 0.78 0.86 RG 0.7 w 48 758 m 564 758 l S
+0.08 0.30 0.58 rg BT /F2 13 Tf 1 0 0 1 50 734 Tm (User acceptance testing scripts) Tj ET
+0.08 0.30 0.58 rg BT /F2 11 Tf 1 0 0 1 52 713 Tm (Student) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 699 Tm (1. Open the public student request page.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 688 Tm (2. Select available equipment; enter details, purpose, room, and a valid future period.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 677 Tm (3. Attach a consented synthetic portrait, acknowledge consent, and submit.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 666 Tm (4. Confirm the request message and ask an admin to locate the pending request.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 655 Tm (5. Accept if required fields, validation, and confirmation are understandable.) Tj ET
+0.08 0.30 0.58 rg BT /F2 11 Tf 1 0 0 1 52 636 Tm (Instructor / teacher) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 622 Tm (1. Sign in and find an item using search.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 611 Tm (2. Create a request for available equipment for valid dates.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 600 Tm (3. Confirm it is pending and invalid dates/quantity are blocked.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 589 Tm (4. After admin approval/release, confirm borrowed status is visible.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 578 Tm (5. Accept if request, approval, and actual release are clearly distinct.) Tj ET
+0.08 0.30 0.58 rg BT /F2 11 Tf 1 0 0 1 52 559 Tm (Administrator) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 545 Tm (1. Create a disposable category/equipment fixture.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 534 Tm (2. Review a pending request, approve it, and release it.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 523 Tm (3. Record a good return; on a separate fixture record a damaged return.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 512 Tm (4. Verify restored availability for the good return and maintenance status for damaged) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 70 501 Tm (equipment.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 490 Tm (5. Review announcements, maintenance, users, and reports.) Tj ET
+0.72 0.78 0.86 RG 0.5 w 48 42 m 564 42 l S
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 48 27 Tm (Prepared 2026-11-20 | Sample cases are Not Run until executed.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 536 27 Tm (8) Tj ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 19 0 R >>
+endobj
+21 0 obj
+<< /Length 2817 >>
+stream
+0.08 0.30 0.58 rg BT /F2 9 Tf 1 0 0 1 48 770 Tm (TECHBORROW  |  SOFTWARE TEST PLAN AND QA SUITE) Tj ET
+0.72 0.78 0.86 RG 0.7 w 48 758 m 564 758 l S
+0.08 0.30 0.58 rg BT /F2 13 Tf 1 0 0 1 50 734 Tm (Initial bug tracking log) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 713 Tm (No execution findings are recorded yet because the sample cases have not been run. This is) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 70 702 Tm (not a claim that the application has no defects.) Tj ET
+0.08 0.30 0.58 rg BT /F2 13 Tf 1 0 0 1 50 679 Tm (Record one row per observed issue) Tj ET
+0.12 0.16 0.22 rg BT /F2 9.5 Tf 1 0 0 1 54 658 Tm (Bug ID / date / tester) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 646 Tm (Assign an ID; record date, tester, browser/device, app version, and test environment.) Tj ET
+0.12 0.16 0.22 rg BT /F2 9.5 Tf 1 0 0 1 54 630 Tm (Related case) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 618 Tm (Reference the test case ID and fixture records; never include real student personal data.) Tj ET
+0.12 0.16 0.22 rg BT /F2 9.5 Tf 1 0 0 1 54 602 Tm (Reproduction) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 590 Tm (List exact preconditions and numbered steps. Attach a sanitized screenshot or relevant log.) Tj ET
+0.12 0.16 0.22 rg BT /F2 9.5 Tf 1 0 0 1 54 574 Tm (Actual vs expected) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 562 Tm (Describe observed behavior and compare it with the expected result in the test case.) Tj ET
+0.12 0.16 0.22 rg BT /F2 9.5 Tf 1 0 0 1 54 546 Tm (Severity) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 534 Tm (Critical: core flow unavailable/data loss. High: important flow blocked. Medium: workaround) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 70 523 Tm (exists. Low: cosmetic/minor.) Tj ET
+0.12 0.16 0.22 rg BT /F2 9.5 Tf 1 0 0 1 54 507 Tm (Status and retest) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 495 Tm (Track Open, In Progress, Fixed, Retest, or Closed; record fix version and regression outcome.) Tj ET
+0.08 0.30 0.58 rg BT /F2 13 Tf 1 0 0 1 50 465 Tm (Current initial entry) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 444 Tm (Bug ID: TBD | Date/tester: fill after execution | Environment: fill after execution |) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 70 433 Tm (Related case: TC-xx | Status: Not Run | Actual result: not yet executed.) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 58 422 Tm (Test suite source: docs/TechBorrow-QA-Test-Plan.md. Record real results after running the) Tj ET
+0.12 0.16 0.22 rg BT /F1 9 Tf 1 0 0 1 70 411 Tm (application; do not mark cases Pass based solely on expected behavior.) Tj ET
+0.72 0.78 0.86 RG 0.5 w 48 42 m 564 42 l S
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 48 27 Tm (Prepared 2026-11-20 | Sample cases are Not Run until executed.) Tj ET
+0.12 0.16 0.22 rg BT /F1 8 Tf 1 0 0 1 536 27 Tm (9) Tj ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 21 0 R >>
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000176 00000 n 
+0000000246 00000 n 
+0000000321 00000 n 
+0000003443 00000 n 
+0000003579 00000 n 
+0000007085 00000 n 
+0000007221 00000 n 
+0000010876 00000 n 
+0000011013 00000 n 
+0000014820 00000 n 
+0000014958 00000 n 
+0000018682 00000 n 
+0000018820 00000 n 
+0000022513 00000 n 
+0000022651 00000 n 
+0000026368 00000 n 
+0000026506 00000 n 
+0000029132 00000 n 
+0000029270 00000 n 
+0000032140 00000 n 
+trailer
+<< /Size 23 /Root 1 0 R >>
+startxref
+32278
+%%EOF

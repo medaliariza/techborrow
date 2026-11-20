@@ -31,12 +31,12 @@ $navigation = $role === 'admin'
     <div class="p-3">
         <h5 class="text-primary fw-bold mb-3">Navigation</h5>
         <nav class="nav flex-column gap-2">
-            <?php foreach ($navigation as $item): ?>
-                <a class="nav-link d-flex align-items-center gap-3 <?php echo $activePage === $item['page'] ? 'active' : ''; ?>" href="<?php echo BASE_URL . $item['href']; ?>">
+            <?php foreach ($navigation as $navItem): ?>
+                <a class="nav-link d-flex align-items-center gap-3 <?php echo $activePage === $navItem['page'] ? 'active' : ''; ?>" href="<?php echo BASE_URL . $navItem['href']; ?>">
                     <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                        <path d="<?php echo e($item['icon']); ?>"></path>
+                        <path d="<?php echo e($navItem['icon']); ?>"></path>
                     </svg>
-                    <span><?php echo e($item['label']); ?></span>
+                    <span><?php echo e($navItem['label']); ?></span>
                 </a>
             <?php endforeach; ?>
         </nav>
