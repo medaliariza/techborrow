@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "TechBorrow",
+  "short_name": "TechBorrow",
+  "description": "Borrow, track, return, and manage technical equipment.",
+  "start_url": "./index.php",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f7fc",
+  "theme_color": "#132b4b",
+  "icons": [
+    {
+      "src": "./assets/images/techborrow-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/images/techborrow-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
