@@ -80,9 +80,10 @@ body {
 }
 
 .auth-card {
-    width: min(940px, 92vw);
+    width: min(1124px, 92vw);
+    min-height: min(656px, calc(100vh - 48px));
     border: 1px solid var(--tb-border);
-    border-radius: 24px;
+    border-radius: 28px;
     overflow: hidden;
     background: var(--tb-surface);
     box-shadow: 0 24px 70px rgba(19, 43, 75, 0.14);
@@ -93,7 +94,7 @@ body {
         radial-gradient(circle at 100% 0%, rgba(98, 158, 255, 0.28), transparent 18rem),
         linear-gradient(145deg, #132b4b, #174d89);
     color: #fff;
-    padding: 3.25rem;
+    padding: 3.75rem;
     align-items: center;
 }
 
@@ -103,19 +104,27 @@ body {
     letter-spacing: -0.05em;
 }
 
+.auth-panel-left h1 {
+    font-size: 2.8rem;
+}
+
 .auth-panel-left p {
+    max-width: 25rem;
+    margin-bottom: 0;
     color: #d3deec;
+    font-size: 1.1rem;
     line-height: 1.7;
 }
 
 .auth-panel-right {
-    padding: 2.5rem;
+    padding: 3rem;
 }
 
 .auth-panel-right h2 {
     color: var(--tb-ink);
     font-weight: 750;
     letter-spacing: -0.04em;
+    font-size: 2.35rem;
 }
 
 .auth-panel-right a:not(.btn) {
@@ -132,6 +141,16 @@ body {
 .auth-panel-right .form-text {
     color: var(--tb-muted);
     line-height: 1.55;
+}
+
+.auth-panel-right .form-control,
+.auth-panel-right .form-select {
+    min-height: 52px;
+}
+
+.auth-panel-right button[type="submit"] {
+    min-height: 46px;
+    font-weight: 650;
 }
 
 .sidebar {
@@ -241,10 +260,13 @@ body {
 }
 
 .main-content .form-control:not(.form-control-sm),
-.main-content .form-select:not(.form-select-sm),
+.main-content .form-select:not(.form-select-sm) {
+    min-height: 44px;
+    border-color: #dce4ef;
+}
+
 .auth-panel-right .form-control,
 .auth-panel-right .form-select {
-    min-height: 44px;
     border-color: #dce4ef;
 }
 
@@ -256,10 +278,15 @@ body {
     box-shadow: 0 0 0 0.22rem rgba(37, 99, 189, 0.12);
 }
 
-.main-content .form-label,
-.auth-panel-right .form-label {
+.main-content .form-label {
     color: #354761;
     font-size: 0.88rem;
+    font-weight: 650;
+}
+
+.auth-panel-right .form-label {
+    color: #354761;
+    font-size: 1rem;
     font-weight: 650;
 }
 
@@ -973,6 +1000,14 @@ body {
 }
 
 @media (max-width: 991.98px) {
+    .auth-card {
+        min-height: 0;
+    }
+
+    .auth-panel-right {
+        padding: 2.5rem;
+    }
+
     .student-request-shell {
         padding-top: 2.25rem;
     }
@@ -984,5 +1019,19 @@ body {
 
     .student-aside-card {
         position: static;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .auth-panel-right {
+        padding: 1.5rem;
+    }
+
+    .auth-panel-right h2 {
+        font-size: 2rem;
+    }
+
+    .auth-panel-left h1 {
+        font-size: 2.25rem;
     }
 }
